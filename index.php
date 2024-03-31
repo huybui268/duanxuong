@@ -8,6 +8,9 @@ require_once "controllers/CategoryController.php";
 require_once "controllers/ProductController.php";
 
 switch ($url) {
+    case '':
+        header('Location:login.php');
+        break;
 //category
     case 'list-category':
         $all_catergory->listCatergory();
