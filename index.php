@@ -8,17 +8,6 @@ require_once "controllers/CategoryController.php";
 require_once "controllers/ProductController.php";
 
 switch ($url) {
-    //sig-up & sig-in
-    case '':
-        if (!isset($_SESSION['user_id'])) {
-            header("location: login.php");
-        }
-        break ;
-    case 'logout':
-        unset($_SESSION['id_user']);
-        header("location: ?url=login");
-        break;
-   
 //category
     case 'list-category':
         $all_catergory->listCatergory();
@@ -44,16 +33,5 @@ switch ($url) {
         break;
     case 'delete-product':
         $all_product->postDeleteProduct();
-//usser
-    case 'list-user':
-        $all_user->listUser();
-        break;
-    case 'add-user':
-        $all_user->addUser();
-        break;
-    case 'update-user':
-        $all_user->postUpdateUser();
-        break;
-    case 'delete-user':
-        $all_user->postDeleteUser();
+
 }
